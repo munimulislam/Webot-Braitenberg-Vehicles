@@ -26,11 +26,11 @@ def run_robot(robot):
         left_light_val = light_sensors[0].getValue() / 100
         right_light_val = light_sensors[1].getValue() / 100
          
-        left_speed = left_light_val
-        right_speed = right_light_val
+        left_speed = MAX_SPEED - left_light_val
+        right_speed = MAX_SPEED - right_light_val
         
         motors[0].setVelocity(left_speed)
-        motors[2].setVelocity(right_speed)
+        motors[2].setVelocity(left_speed)
         
         motors[1].setVelocity(right_speed)
         motors[3].setVelocity(right_speed)
